@@ -5,12 +5,12 @@
 
   <h2 align="center">Cloud Browser | Proxies | Crawl | Scraping API | Enterprise Custom Solutions</h2>
 
-  ![Static Badge](https://img.shields.io/badge/scrapeless-Scraping%20Browser-%2312A594)
+  ![Static Badge](https://img.shields.io/badge/Scrapeless-Headless-Cloud%20Browser-%2312A594)
   ![Static Badge](https://img.shields.io/badge/Proxy-195%20Countries-%2312A594)
   ![Static Badge](https://img.shields.io/badge/Fingerprint-Customizable-%2312A594)
   
-  ![Static Badge](https://img.shields.io/badge/scrapeless-Deep%20SerpAPI-%2312A594)
-  ![Static Badge](https://img.shields.io/badge/scrapeless-Universal%20Scraping%20API-%2312A594)
+  ![Static Badge](https://img.shields.io/badge/Scrapeless-Deep%20SerpAPI-%2312A594)
+  ![Static Badge](https://img.shields.io/badge/Scrapeless-Universal%20Scraping%20API-%2312A594)
   
   <p align="center">
     <a href="https://www.scrapeless.com/en" target="_blank">

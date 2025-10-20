@@ -1,9 +1,9 @@
-# 🚀🤖 Infrastructure for Crawling, Automation, and AI Agents
+# 🔥 Infrastructure for Crawling, Automation, and AI Agents 🔥
 
 <div align="center">
   <img src="static/image/logo.svg" style="width: 120px; height: 120px;" alt="logo">
 
-  <h2 align="center">🔥A Flexible Toolkit for Accessing Public Web Data</h2>
+  <h2 align="center">Proxies | Cloud Browser | Enterprise Custom Solutions</h2>
 
   ![Static Badge](https://img.shields.io/badge/scrapeless-Deep%20SerpAPI-%2312A594)
   ![Static Badge](https://img.shields.io/badge/scrapeless-Scraping%20Browser-%2312A594)

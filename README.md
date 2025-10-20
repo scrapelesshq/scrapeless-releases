@@ -3,7 +3,7 @@
 <div align="center">
   <img src="static/image/logo.svg" style="width: 120px; height: 120px;" alt="logo">
 
-  <h2 align="center">Proxies | Cloud Browser | Enterprise Custom Solutions</h2>
+  <h2 align="center">Cloud Browser | Proxies | Crawl | Scraping API | Enterprise Custom Solutions</h2>
 
   ![Static Badge](https://img.shields.io/badge/scrapeless-Deep%20SerpAPI-%2312A594)
   ![Static Badge](https://img.shields.io/badge/scrapeless-Scraping%20Browser-%2312A594)

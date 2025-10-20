@@ -1,4 +1,4 @@
-<h1 align="center"> 🔥 Browser Infra for Crawling, Automation, and AI Agents 🔥</h1>
+<h1 align="center">🔥 Browser Infra for Crawling, Automation, and AI Agents</h1>
 
 <div align="center">
   <img src="static/image/logo.svg" style="width: 120px; height: 120px;" alt="logo">

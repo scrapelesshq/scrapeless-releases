@@ -14,9 +14,6 @@
   ![Static Badge](https://img.shields.io/badge/Unlocker-Universal%20Scraping%20API-%2312A594)
   
   <p align="center">
-    <a href="https://www.scrapeless.com/en" target="_blank">
-      <img src="https://img.shields.io/badge/Official%20Website-12A594?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Official Website"/>
-    </a>
     <a href="https://www.youtube.com/@Scrapeless" target="_blank">
       <img src="https://img.shields.io/badge/Follow%20on%20YouTuBe-FF0033?style=for-the-badge&logo=youtube&logoColor=white" alt="Follow on YouTuBe" />
     </a>
@@ -28,7 +25,10 @@
     </a>
     <a href="https://www.reddit.com/r/Scrapeless" target="_blank">
       <img src="https://img.shields.io/badge/Join%20us%20on%20Reddit-FF4500?style=for-the-badge&logo=reddit&logoColor=white" alt="Join us on Reddit" />
-    </a>    
+    </a> 
+    <a href="https://www.scrapeless.com/en" target="_blank">
+      <img src="https://img.shields.io/badge/Official%20Website-12A594?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Official Website"/>
+    </a>
   </p>
 
 </div>

@@ -1,4 +1,4 @@
-# 🚀🤖 Effortless Web Scraping Toolkitfor Business and Developers
+# 🚀🤖 Infrastructure for Crawling, Automation, and AI Agents
 
 <div align="center">
   <img src="static/image/logo.svg" style="width: 120px; height: 120px;" alt="logo">

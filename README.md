@@ -6,7 +6,7 @@
   <h2 align="center">Cloud Browser | Proxies | Crawl | Scraping API | Enterprise Custom Solutions</h2>
 
   ![Static Badge](https://img.shields.io/badge/Browser-Headless_Cloud%20Browser-%2312A594)
-  ![Static Badge](https://img.shields.io/badge/Proxy-195%20Countries%20%E2%80%93%20as%20Low%20as%200.5%24%2F1GB-%2312A594)
+  ![Static Badge](https://img.shields.io/badge/Proxy-195%20Countries%20%E2%80%93%200.5%24%2F1GB-%2312A594)
   ![Static Badge](https://img.shields.io/badge/Fingerprint-Customizable-%2312A594)
   ![Static Badge](https://img.shields.io/badge/Captcha-Beat%20Anti--Bots%20in%20Real%20Time-%2312A594)
   

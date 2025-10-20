@@ -1,7 +1,7 @@
 <h1 align="center">🔥 Browser Infra for Crawling, Automation, and AI Agents</h1>
 
 <div align="center">
-  <img src="static/image/logo-new.svg" style="width: 360px; height: 360px;" alt="logo">
+  <img src="static/image/logo-new.svg" style="width: 120px; height: 120px;" alt="logo">
 
   <h2 align="center">Cloud Browser | Proxies | Crawl | Scraping API | Enterprise Custom Solutions</h2>
 

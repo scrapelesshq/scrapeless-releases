@@ -35,14 +35,213 @@
 
 ---
 
-## ✨ Features
+<h1 align="center">🚀 Select the product that best suits your needs and get started</h2>
+
+### First, install the SDK
+```bash
+# Install the official Scrapeless SDK
+npm install @scrapeless-ai/sdk
+```
+
+---
+
 ### Browser
-Run Puppeteer, and Playwright scripts on hosted browsers
+A self-developed Chromium cloud browser, built for AI Agents and automated crawling — with strong customization, anti-detection, and extensibility.
+
+#### Writing Code to Connect to Browser
+You can connect using Puppeteer or Playwright adapters provided by the SDK.
+
+**Puppeteer**
+```javascript
+import { Puppeteer } from '@scrapeless-ai/sdk';
+
+const browser = await Puppeteer.connect({
+  apiKey: 'YOUR_API_KEY',
+  sessionName: 'sdk_test',
+  sessionTTL: 180,
+  proxyCountry: 'ANY',
+  sessionRecording: true,
+  defaultViewport: null,
+});
+
+const page = await browser.newPage();
+await page.goto('https://www.scrapeless.com');
+console.log(await page.title());
+await browser.close();
+```
+
+**Playwright**
+```javascript
+import { Playwright } from '@scrapeless-ai/sdk';
+
+const browser = await Playwright.connect({
+  apiKey: 'YOUR_API_KEY',
+  proxyCountry: 'ANY',
+  sessionName: 'sdk_test',
+  sessionRecording: true,
+  sessionTTL: 180,
+});
+
+const context = browser.contexts()[0];
+const page = await context.newPage();
+await page.goto('https://www.scrapeless.com');
+console.log(await page.title());
+await browser.close();
+```
+
+---
+
+### Universal Scraping API
+Dynamic web scraping API with JS interaction and multi-format parsing—breaks through anti-scraping barriers to extract target information with precision. Supports multi-format data export (Markdown / JSON / Screenshot / HTML / Links).
+
+**Capture Data via SDK Endpoint**
+```javascript
+import { Scrapeless } from '@scrapeless-ai/sdk';
+
+const client = new Scrapeless({
+  apiKey: 'YOUR_API_KEY'
+});
+
+client.universal.scrape({
+   actor: "unlocker.webunlocker",
+   input: {
+      url: "https://httpbin.io/get",
+      redirect: false,
+      method: "GET",
+   },
+   proxy: {
+      country: "ANY",
+   }
+}).then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+```
+
+---
 
 ### Crawl
-Extract data from single pages or traverse entire domains
+A crawling engine designed for recursive scraping of single pages and sub-pages. It automatically solves CAPTCHAs and supports multi-format data export, including Markdown, JSON, screenshots, HTML, and links.
+
+**How to initiate a web scraping request through Scrapeless SDK**
+```javascript
+import { ScrapingCrawl } from '@scrapeless-ai/sdk';
+
+// Initialize the client
+const client = new ScrapingCrawl({
+  apiKey: 'YOUR_API_KEY', // Get your API key from https://scrapeless.com
+});
+
+(async () => {
+  const result = await client.scrapeUrl('https://example.com');
+  console.log(result);
+})();
+```
+
+
+### Browser Configurations
+Scrapeless automatically handles common CAPTCHA types, including reCAPTCHA v2 and Cloudflare Turnstile/Challenge.
+
+```javascript
+import { ScrapingCrawl } from '@scrapeless-ai/sdk';
+
+// Initialize the client
+const client = new ScrapingCrawl({
+  apiKey: 'YOUR_API_KEY',
+});
+
+(async () => {
+  const result = await client.scrapeUrl('https://example.com', {
+    browserOptions: {
+      proxyCountry: 'ANY',
+      sessionName: 'Crawl',
+      sessionRecording: true,
+      sessionTTL: 900,
+    },
+  });
+  console.log(result);
+})();
+```
+
+
+### Scrape Configurations
+Provide optional parameters such as return formats, only returning main content, navigation timeout, etc.
+
+```javascript
+import { ScrapingCrawl } from '@scrapeless-ai/sdk';
+
+const client = new ScrapingCrawl({
+  apiKey: 'YOUR_API_KEY',
+});
+
+(async () => {
+  const result = await client.scrapeUrl('https://example.com', {
+    formats: ['markdown', 'html', 'links'],
+    onlyMainContent: false,
+    timeout: 15000,
+  });
+  console.log(result);
+})();
+```
+
+
+### Batch Scrape
+Batch scraping supports multiple URLs at once.
+
+```javascript
+import { ScrapingCrawl } from '@scrapeless-ai/sdk';
+
+const client = new ScrapingCrawl({
+  apiKey: 'YOUR_API_KEY',
+});
+
+(async () => {
+  const result = await client.batchScrapeUrls(
+    ['https://example.com', 'https://scrapeless.com'],
+    {
+      formats: ['markdown', 'html', 'links'],
+      onlyMainContent: false,
+      timeout: 15000,
+      browserOptions: {
+        proxyCountry: 'ANY',
+        sessionName: 'Crawl',
+        sessionRecording: true,
+        sessionTTL: 900,
+      },
+    }
+  );
+  console.log(result);
+})();
+```
+
+---
 
 ### Deep SerpApi
-Extract Structured GoogleSearch Data At Scale
+Google SERP API with fast response and cost-effective pricing—delivers real-time organic results, ads & snippets.
 
+**Code Example: Extract search engine results**
+```javascript
+import { Scrapeless } from '@scrapeless-ai/sdk';
+
+const client = new Scrapeless({
+  apiKey: 'YOUR_API_KEY'
+});
+
+client.deepserp.createTask({
+    actor: "scraper.google.search",
+    input: {
+        q: "Top news headlines",
+        gl: "us",
+        hl: "en",
+        google_domain: "google.com"
+    }
+}).then((result) => {
+    console.log(result);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+```
 ---

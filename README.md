@@ -29,6 +29,9 @@
     <a href="https://app.scrapeless.com/passport/register?utm_source=official&utm_term=githubopen" target="_blank">
       <img src="https://img.shields.io/badge/Official%20Website-12A594?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Official Website"/>
     </a>
+    <a href="https://cal.com/scrapeless" target="_blank">
+      <img src="https://img.shields.io/badge/Book%20Enterprise%20Customization-12A594?style=for-the-badge&logo=calendar&logoColor=white" alt="Enterprise Customization"/>
+    </a>
   </p>
 
 </div>

@@ -37,6 +37,8 @@
 
 <h2 align="center">🔍 Browser Labs: The Future of Cloud & Fingerprint Browsers</h2>
 
+![Scrapeless X Nstbrowser](https://github.com/user-attachments/assets/884b1e09-607a-4b5b-844d-f7a59ddf9fcd)
+
 Scrapeless has entered into a strategic partnership with Nstbrowser. Together, we will integrate our product lines, upgrade our cloud browser services, and establish a new joint R&D center — “Browser Labs.”
 
 Over the past few years, Nstbrowser has built strong expertise in fingerprint browser and anti-detection technologies, while Scrapeless has been advancing in web automation and AI agent infrastructure.
@@ -46,7 +48,176 @@ As AI and autonomous agent technologies evolve rapidly, agents are demanding hig
 Both parties agreed that only by integrating the **“authentic interaction and isolation capabilities of physical browser”** with the **“high-concurrency adaptation capabilities of cloud browsers”** can long-term competitiveness be established for enterprises and automated scenarios.
 > [Click](https://www.youtube.com/watch?v=r_gh8aQQQDM) to watch the video and learn more!
 
-![Scrapeless X Nstbrowser](https://github.com/user-attachments/assets/884b1e09-607a-4b5b-844d-f7a59ddf9fcd)
+---
+
+<h2 align="center">🤖 Enhance Crawl4AI with Scrapeless Cloud Browser</h2>
+
+<img width="1280" height="720" alt="Enhance Crawl4AI with Scrapeless Cloud Browser" src="https://github.com/user-attachments/assets/38a4797f-7a2b-4380-81c0-afe98ffa0b8f" />
+
+### **1. Quick Start**
+
+The example below shows how to quickly and easily connect Crawl4AI to the Scrapeless Cloud Browser:
+
+> For more features and detailed instructions, see the [introduction](https://docs.scrapeless.com/en/scraping-browser/quickstart/getting-started/?utm_source=blog&utm_medium=integration&utm_campaign=crawl4ai).
+
+```
+scrapeless_params = {
+    "token": "get your token from https://www.scrapeless.com",
+    "sessionName": "Scrapeless browser",
+    "sessionTTL": 1000,
+}
+
+query_string = urlencode(scrapeless_params)
+scrapeless_connection_url = f"wss://browser.scrapeless.com/api/v2/browser?{query_string}"
+
+AsyncWebCrawler(
+    config=BrowserConfig(
+        headless=False,
+        browser_mode="cdp",
+        cdp_url=scrapeless_connection_url
+    )
+)
+
+```
+
+After configuration, Crawl4AI connects to the Scrapeless Cloud Browser via **CDP (Chrome DevTools Protocol)** mode, enabling web scraping without a local browser environment. Users can further configure **proxies, fingerprints, session reuse**, and other features to meet the demands of high-concurrency and complex anti-bot scenarios.
+
+### **2. Global Automatic Proxy Rotation**
+
+Scrapeless supports residential IPs across **195 countries**. Users can configure the target region using `proxycountry`, enabling requests to be sent from specific locations. IPs are automatically rotated, effectively avoiding blocks.
+
+```
+import asyncio
+from urllib.parse import urlencode
+from Crawl4AI import CrawlerRunConfig, BrowserConfig, AsyncWebCrawler
+
+async def main():
+    scrapeless_params = {
+        "token": "your token",
+        "sessionTTL": 1000,
+        "sessionName": "Proxy Demo",
+        # Sets the target country/region for the proxy, sending requests via an IP address from that region. You can specify a country code (e.g., US for the United States, GB for the United Kingdom, ANY for any country). See country codes for all supported options.
+        "proxyCountry": "ANY",
+    }
+    query_string = urlencode(scrapeless_params)
+    scrapeless_connection_url = f"wss://browser.scrapeless.com/api/v2/browser?{query_string}"
+    async with AsyncWebCrawler(
+        config=BrowserConfig(
+            headless=False,
+            browser_mode="cdp",
+            cdp_url=scrapeless_connection_url,
+        )
+    ) as crawler:
+        result = await crawler.arun(
+            url="https://www.scrapeless.com/en",
+            config=CrawlerRunConfig(
+                wait_for="css:.content",
+                scan_full_page=True,
+            ),
+        )
+        print("-" * 20)
+        print(f'Status Code: {result.status_code}')
+        print("-" * 20)
+        print(f'Title: {result.metadata["title"]}')
+        print(f'Description: {result.metadata["description"]}')
+        print("-" * 20)
+asyncio.run(main())
+```
+
+### **3. Custom Browser Fingerprints**
+
+To mimic real user behavior, Scrapeless supports randomly generated browser fingerprints and also allows custom fingerprint parameters. This effectively reduces the risk of being detected by target websites.
+```
+import json
+import asyncio
+from urllib.parse import quote, urlencode
+from Crawl4AI import CrawlerRunConfig, BrowserConfig, AsyncWebCrawler
+
+async def main():
+    # customize browser fingerprint
+    fingerprint = {
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.1.2.3 Safari/537.36",
+        "platform": "Windows",
+        "screen": {
+            "width": 1280, "height": 1024
+        },
+        "localization": {
+            "languages": ["zh-HK", "en-US", "en"], "timezone": "Asia/Hong_Kong",
+        }
+    }
+
+    fingerprint_json = json.dumps(fingerprint)
+    encoded_fingerprint = quote(fingerprint_json)
+
+    scrapeless_params = {
+        "token": "your token",
+        "sessionTTL": 1000,
+        "sessionName": "Fingerprint Demo",
+        "fingerprint": encoded_fingerprint,
+    }
+    query_string = urlencode(scrapeless_params)
+    scrapeless_connection_url = f"wss://browser.scrapeless.com/api/v2/browser?{query_string}"
+    async with AsyncWebCrawler(
+        config=BrowserConfig(
+            headless=False,
+            browser_mode="cdp",
+            cdp_url=scrapeless_connection_url,
+        )
+    ) as crawler:
+        result = await crawler.arun(
+            url="https://www.scrapeless.com/en",
+            config=CrawlerRunConfig(
+                wait_for="css:.content",
+                scan_full_page=True,
+            ),
+        )
+        print("-" * 20)
+        print(f'Status Code: {result.status_code}')
+        print("-" * 20)
+        print(f'Title: {result.metadata["title"]}')
+        print(f'Description: {result.metadata["description"]}')
+        print("-" * 20)
+asyncio.run(main())
+```
+### **4. Profile Reuse**
+
+Scrapeless assigns each profile its own independent browser environment, enabling persistent logins and identity isolation. Users can simply provide the `profileId` to reuse a previous session.
+```
+import asyncio
+from urllib.parse import urlencode
+from Crawl4AI import CrawlerRunConfig, BrowserConfig, AsyncWebCrawler
+
+async def main():
+    scrapeless_params = {
+        "token": "your token",
+        "sessionTTL": 1000,
+        "sessionName": "Profile Demo",
+        "profileId": "your profileId", # create profile on scrapeless
+    }
+    query_string = urlencode(scrapeless_params)
+    scrapeless_connection_url = f"wss://browser.scrapeless.com/api/v2/browser?{query_string}"
+    async with AsyncWebCrawler(
+        config=BrowserConfig(
+            headless=False,
+            browser_mode="cdp",
+            cdp_url=scrapeless_connection_url,
+        )
+    ) as crawler:
+        result = await crawler.arun(
+            url="https://www.scrapeless.com",
+            config=CrawlerRunConfig(
+                wait_for="css:.content",
+                scan_full_page=True,
+            ),
+        )
+        print("-" * 20)
+        print(f'Status Code: {result.status_code}')
+        print("-" * 20)
+        print(f'Title: {result.metadata["title"]}')
+        print(f'Description: {result.metadata["description"]}')
+        print("-" * 20)
+asyncio.run(main())
+```
 
 ---
 

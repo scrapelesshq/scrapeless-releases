@@ -35,6 +35,19 @@
 
 ---
 
+Scrapeless has entered into a strategic partnership with Nstbrowser. Together, we will integrate our product lines, upgrade our cloud browser services, and establish a new joint R&D center — “Browser Labs.”
+
+Over the past few years, Nstbrowser has built strong expertise in fingerprint browser and anti-detection technologies, while Scrapeless has been advancing in web automation and AI agent infrastructure.
+
+As AI and autonomous agent technologies evolve rapidly, agents are demanding higher standards of browser authenticity, isolation, and large-scale concurrency.
+
+Both parties agreed that only by integrating the **“authentic interaction and isolation capabilities of physical browser”** with the **“high-concurrency adaptation capabilities of cloud browsers”** can long-term competitiveness be established for enterprises and automated scenarios.
+> [Click](https://www.youtube.com/watch?v=r_gh8aQQQDM) to watch the video and learn more!
+
+![Scrapeless X Nstbrowser](https://github.com/user-attachments/assets/884b1e09-607a-4b5b-844d-f7a59ddf9fcd)
+
+---
+
 <h1 align="center">🚀 Select the product & get started</h2>
 
 ### First, install the SDK

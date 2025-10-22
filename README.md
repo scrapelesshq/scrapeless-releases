@@ -43,6 +43,8 @@
 npm install @scrapeless-ai/sdk
 ```
 
+### Click [here](https://app.scrapeless.com/passport/register?utm_source=official&utm_term=githubopen) to obtain your API-KEY
+
 ---
 
 ### Browser

@@ -30,7 +30,7 @@
       <img src="https://img.shields.io/badge/Official%20Website-12A594?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Official Website"/>
     </a>
     <a href="https://cal.com/scrapeless" target="_blank">
-      <img src="https://img.shields.io/badge/Book%20Enterprise%20Customization-12A594?style=for-the-badge&logo=calendar&logoColor=white" alt="Enterprise Customization"/>
+      <img src="https://img.shields.io/badge/Enterprise%20Custom%20Solutions-%23C5A100?style=for-the-badge&logo=briefcase&logoColor=white" alt="Enterprise Customization"/>
     </a>
   </p>
 

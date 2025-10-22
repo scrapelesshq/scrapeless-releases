@@ -35,7 +35,7 @@
 
 ---
 
-<h1 align="center">🚀 Select the product that suits your needs and get started</h2>
+<h1 align="center">🚀 Select the product & get started</h2>
 
 ### First, install the SDK
 ```bash

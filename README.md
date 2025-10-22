@@ -35,6 +35,8 @@
 
 ---
 
+<h2 align="center">🔍 Browser Labs: The Future of Cloud & Fingerprint Browsers</h2>
+
 Scrapeless has entered into a strategic partnership with Nstbrowser. Together, we will integrate our product lines, upgrade our cloud browser services, and establish a new joint R&D center — “Browser Labs.”
 
 Over the past few years, Nstbrowser has built strong expertise in fingerprint browser and anti-detection technologies, while Scrapeless has been advancing in web automation and AI agent infrastructure.
@@ -48,7 +50,7 @@ Both parties agreed that only by integrating the **“authentic interaction and 
 
 ---
 
-<h1 align="center">🚀 Select the product & get started</h2>
+<h2 align="center">🚀 Select the product & get started</h2>
 
 ### First, install the SDK
 ```bash

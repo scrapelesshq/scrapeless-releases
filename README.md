@@ -224,6 +224,48 @@ asyncio.run(main())
 
 ---
 
+<h2 align="center">🕷️ Enhance Scrapling with Scrapeless Cloud Browser</h2>
+
+<img width="5760" height="3240" alt="scrapeless x Scrapling" src="https://github.com/user-attachments/assets/0a1da6dd-ac83-41b2-b612-0e4a49059ea5" />
+
+Together, Scrapling × Scrapeless offers a seamless combination of adaptive intelligence and infrastructure-level stability — enabling developers to:
+
+✅ Run large-scale, JS-rendered crawls through a fully managed cloud browser<br>
+✅ Reduce costs and time spent on updating selectors or maintaining browser sessions<br>
+✅ Operate in any region with built-in proxy and fingerprint rotation<br>
+✅ Maintain higher success rates across anti-bot and dynamic web environments<br>
+
+You can use the following code to quickly implement the integration:
+
+```
+from urllib.parse import urlencode
+
+from scrapling.fetchers import DynamicSession
+
+# Configure your browser session
+config = {
+    "token": "YOUR_API_KEY",
+    "sessionName": "scrapling-session",
+    "sessionTTL": "300",  # 5 minutes
+    "proxyCountry": "ANY",
+    "sessionRecording": "false",
+}
+
+# Build WebSocket URL
+ws_endpoint = f"wss://browser.scrapeless.com/api/v2/browser?{urlencode(config)}"
+print('Connecting to Scrapeless...')
+
+with DynamicSession(cdp_url=ws_endpoint, disable_resources=True) as s:
+    print("Connected!")
+    page = s.fetch("https://httpbin.org/headers", network_idle=True)
+    print(f"Page loaded, content length: {len(page.body)}")
+    print(page.json())
+```
+
+This collaboration turns web scraping from a fragile task into a self-healing, cloud-native workflow — smarter, faster, and more reliable than ever before.
+
+---
+
 <h2 align="center">🚀 Select the product & get started</h2>
 
 ### First, install the SDK
